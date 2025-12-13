@@ -844,7 +844,11 @@ function Remove-Services {
 
     foreach ($service in $servicesToRemove) {
         Write-Log "Removing service: $service"
-        & 'reg' 'delete' "HKLM\zSYSTEM\ControlSet001\Services\$service" /f 2>&1 | Out-Null
+        try {
+            & 'reg' 'delete' "HKLM\zSYSTEM\ControlSet001\Services\$service" /f 2>&1 | Out-Null
+        } catch {
+            Write-Log "Could not remove service $service : Registry key not found or error" "WARN"
+        }
     }
 
     reg unload HKLM\zSYSTEM 2>&1 | Out-Null
