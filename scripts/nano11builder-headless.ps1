@@ -640,7 +640,11 @@ function Optimize-WinSxS {
     }
 
     Write-Log "Replacing WinSxS with minimal version..."
-    Remove-Item -Path $sourceDirectory -Recurse -Force
+    $emptyDir = "$ScratchDisk\empty_temp"
+    New-Item -Path $emptyDir -ItemType Directory -Force | Out-Null
+    & robocopy $emptyDir $sourceDirectory /MIR /R:0 /W:0 /NFL /NDL /NJH /NJS | Out-Null
+    Remove-Item -Path $emptyDir -Force
+    Remove-Item -Path $sourceDirectory -Force
     Rename-Item -Path $destinationDirectory -NewName "WinSxS"
 
     Write-Log "WinSxS optimization complete"
