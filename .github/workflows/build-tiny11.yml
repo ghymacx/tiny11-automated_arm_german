@@ -15,7 +15,7 @@ on:
       windows_iso_url:
         description: 'Windows 11 ISO download URL'
         required: true
-        default: 'https://software.download.prss.microsoft.com/dbazure/Win11_25H2_English_x64.iso?t=84586cf6-9b51-4717-9c9e-43a147d13a76&P1=1765723100&P2=601&P3=2&P4=i01rQ%2fmrl%2buVppty0J5Sz%2fJ%2bagMP6ntwQbEymbF3T4N%2bBq%2fRQTaW6Ei%2fa%2fXNhGswmzAOOcPaTghphTtFMF0EX7U14aQxP%2fz%2bkgwKiCxLkH7ozABPxZyqf2SimL4OEhpOaR5BaeuOEvyLpFbk1NCf%2bK8xQqKQCvKIjqFJY7hgjkxWtuDIxsTMRZz5gXxmnStihqqgOYo%2fBkwQp7tMrn8V%2bQrWo9OrFMWyCUWMY2imfKCi5q0VFKhgBki52qhTJbxVR3IUsGgyXw2Xzk5DjJQ906IBtpTl3h7vSEDDw714sziwq0yMwdpN2WHbjZVt5mcqaYdg1GoWdM9xK6kL7tT6Tw%3d%3d'
+        default: 'https://software.download.prss.microsoft.com/dbazure/Win11_25H2_English_x64.iso?t=641a9719-5089-48d3-b683-44d9012b040e&P1=1765893811&P2=601&P3=2&P4=kPgTlzFR6%2bt9lzW6l2ITzVyc3%2fMHiCzaC5YMwf3RcQH%2bXezCHitvttx2e91%2fT%2bPcXPxVLKAYbeqrAW2mZozm1q%2bTjC4JYdInC0gROdmtKH2X84U99HD1RzRhTXmFi7lemqPDAHcOZ4yx95AzW6rzMvQF2QBsmSE%2fl5l8bWupChqEd28LHdjMXrSu3otYpyxc8S4cFluEgaLD2mkPCrqX61ij2PUrqiZM2jq%2bbz5Fx3kNXCZ3Z1pJkfKKQGb3T%2fvbbWfu7avjuU2kBDJjyeecJH3MGeTP9jsbT6oIHU95AL05%2bA43il%2f4rGDNcFGji1logGrKYi%2f%2b2fDpCFuGh9rN5w%3d%3d'
       image_index:
         description: 'Windows image index (1=Home, 4=Education, 6=Pro, 7=Pro N)'
         required: true
