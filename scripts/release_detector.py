@@ -389,7 +389,7 @@ def main():
         with open(args.output, 'w') as f:
             f.write("has_new=false\n")
             f.write("new_releases=[]\n")
-            f.write("releases_matrix={}\n")
+            f.write("releases_matrix=[]\n")
         
         return 0
     
@@ -400,18 +400,18 @@ def main():
         logger.info(f"  - {release.title} (Build {release.build_number})")
     
     # Generate matrix
-    matrix = detector.generate_matrix(new_releases)
+    # note: we output the list of releases directly. The YAML workflow handles
+    # the expansion of build types and editions via its own matrix strategy.
     
     # Prepare data for GitHub Actions output
     # Use compact JSON to avoid multi-line issues
     new_releases_json = json.dumps([asdict(r) for r in new_releases], separators=(',', ':'))
-    matrix_json = json.dumps(matrix, separators=(',', ':'))
     
     # Write outputs for GitHub Actions (single line format)
     with open(args.output, 'w') as f:
         f.write("has_new=true\n")
         f.write(f"new_releases={new_releases_json}\n")
-        f.write(f"releases_matrix={matrix_json}\n")
+        f.write(f"releases_matrix={new_releases_json}\n")
         f.write(f"release_count={len(new_releases)}\n")
     
     logger.info("✅ Detection complete!")
