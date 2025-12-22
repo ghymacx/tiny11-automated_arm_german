@@ -70,8 +70,11 @@ jobs:
             pip install -r requirements.txt
           else
             # Fallback to direct install if no requirements file
-            pip install requests beautifulsoup4 lxml
+            pip install requests beautifulsoup4 lxml playwright
           fi
+
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps chromium
       
       - name: Fetch Current Tracked Releases
         id: fetch_tracked
