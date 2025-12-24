@@ -488,9 +488,9 @@ skip_cleanup:           # Same as above
 
 | Variant | Download Time | Build Time | Total Time | Output Size |
 |---------|--------------|------------|------------|-------------|
-| **Standard** | 5-15 min | 45-80 min | **50-95 min** | ~2.5-3GB |
-| **Core** | 5-15 min | 30-45 min | **35-60 min** | ~2GB |
-| **Nano** | 5-15 min | <40 min | **~45-55 min** | ~1.5GB |
+| **Standard** | 5-15 min | 45-80 min | **50-95 min** | ~4-5GB |
+| **Core** | 5-15 min | 30-45 min | **35-60 min** | ~3-4GB |
+| **Nano** | 5-15 min | <40 min | **~45-55 min** | ~2-2.9GB |
 
 *Build times measured on GitHub Actions standard runners (2-core, 7GB RAM)*
 
@@ -687,7 +687,6 @@ Found a security issue? **DO NOT create a public GitHub issue!**
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute
 - **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** - Community guidelines
 - **[SECURITY.md](SECURITY.md)** - Security policy & reporting
-- **[ROADMAP.md](ROADMAP.md)** - Future plans & features
 - **[LICENSE](LICENSE)** - MIT License terms
 - **[SOURCEFORGE_README.md](SOURCEFORGE_README.md)** - SourceForge-specific info
 
@@ -749,7 +748,7 @@ All contributors are recognized in:
 
 ### Connect With Us
 
-- **💬 Discord**: [Join our server](https://discord.gg/YOUR_INVITE) - Real-time chat & support
+- **💬 Discord**: [Join our server](https://discord.gg/xy6uRHvrrN) - Real-time chat & support
 - **🗨️ GitHub Discussions**: [Ask questions](https://github.com/kelexine/tiny11-automated/discussions) - Q&A and ideas
 - **🐛 Issue Tracker**: [Report bugs](https://github.com/kelexine/tiny11-automated/issues) - Bug reports only
 - **📥 SourceForge**: [Download releases](https://sourceforge.net/projects/tiny-11-releases/) - Official ISOs
@@ -777,7 +776,7 @@ All contributors are recognized in:
 
 ### Licensing Information
 
-- **Tiny11 Automated** (headless scripts, CI/CD): MIT License © 2024-2025 kelexine
+- **Tiny11 Automated** (headless scripts, CI/CD): MIT License © 2025 kelexine
 - **Original tiny11builder** (BASE scripts): MIT License © ntdevlabs
 - **Individual files**: See copyright notices in each file
 
@@ -847,9 +846,9 @@ The authors (kelexine, ntdevlabs) are **NOT responsible** for:
 
 ### Author
 
-- **👨‍💻 kelexine**: [GitHub](https://github.com/kelexine) | [Discord](https://discord.gg/YOUR_INVITE)
-- **✉️ Email**: frankiekelechi@gmail.com
-- **💖 Sponsor**: [GitHub Sponsors](https://github.com/sponsors/kelexine) (if enabled)
+- **👨‍💻 kelexine**: [GitHub](https://github.com/kelexine) | [Telegram](https://t,me/kelexine2)
+- **✉️ Email**: [Email Me](frankiekelechi@gmail.com)
+- **💖 Sponsor**: [GitHub Sponsors](https://github.com/sponsors/kelexine) or [Buy Me a Coffee](https://buymeacoffee.com/kelexine)
 
 ---
 
