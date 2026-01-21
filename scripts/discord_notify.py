@@ -216,6 +216,26 @@ class DiscordNotifier:
             fields=fields
         )
 
+    def notify_builds_triggered(self, builds_count: int, releases: List[Dict]) -> bool:
+        """Notify that automated builds have been triggered"""
+        
+        release_titles = [r.get('title', 'Unknown Release') for r in releases]
+        release_text = "\n".join([f"• {t}" for t in release_titles[:5]])
+        if len(release_titles) > 5:
+            release_text += f"\n... and {len(release_titles) - 5} more"
+
+        fields = [
+            {'name': '🚀 Triggered Builds', 'value': str(builds_count), 'inline': True},
+            {'name': 'targets', 'value': 'Standard, Core, Nano (Home & Pro)', 'inline': True},
+            {'name': 'For Releases', 'value': release_text if release_text else "No release info", 'inline': False}
+        ]
+        
+        return self.send_embed(
+            title='🚀 Automated Builds Triggered',
+            description=f'Matrix build successfully triggered for {len(releases)} release(s).',
+            color='success',
+            fields=fields
+        )
 
 def main():
     """CLI interface for Discord notifications"""
@@ -225,7 +245,7 @@ def main():
     parser.add_argument('--webhook', required=True, help='Discord webhook URL')
     parser.add_argument('--type', required=True, choices=[
         'new-releases', 'build-started', 'build-completed', 
-        'build-failed', 'daily-summary'
+        'build-failed', 'daily-summary', 'builds-triggered'
     ])
     parser.add_argument('--data', help='JSON data for notification')
     
@@ -242,6 +262,11 @@ def main():
         else:
             releases = data.get('releases', [])
         success = notifier.notify_new_releases(releases)
+    elif args.type == 'builds-triggered':
+        success = notifier.notify_builds_triggered(
+            data.get('builds_count', 0),
+            data.get('releases', [])
+        )
     elif args.type == 'build-started':
         success = notifier.notify_build_started(
             data['version'], data['build_type'], data['edition']
