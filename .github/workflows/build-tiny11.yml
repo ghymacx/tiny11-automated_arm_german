@@ -29,7 +29,7 @@ on:
       language:
         description: 'Language (e.g., English, Spanish, French)'
         required: false
-        default: 'German'
+        default: 'German_ARM64'
       skip_cleanup:
         description: 'Skip cleanup (for debugging)'
         required: false
@@ -66,10 +66,10 @@ jobs:
           # Get edition based on index
           $index = "${{ github.event.inputs.image_index }}"
           $editions = @{
-              "1" = "Home_ARM64"
-              "4" = "Education_ARM64"
-              "6" = "Pro_ARM64"
-              "7" = "ProN_ARM64"
+              "1" = "Home"
+              "4" = "Education"
+              "6" = "Pro"
+              "7" = "ProN"
           }
           $edition = $editions[$index]
 
