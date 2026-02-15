@@ -15,11 +15,11 @@ on:
       windows_iso_url:
         description: 'Windows 11 ISO download URL'
         required: true
-        default: 'https://software.download.prss.microsoft.com/dbazure/Win11_25H2_English_x64.iso?t=641a9719-5089-48d3-b683-44d9012b040e&P1=1765893811&P2=601&P3=2&P4=kPgTlzFR6%2bt9lzW6l2ITzVyc3%2fMHiCzaC5YMwf3RcQH%2bXezCHitvttx2e91%2fT%2bPcXPxVLKAYbeqrAW2mZozm1q%2bTjC4JYdInC0gROdmtKH2X84U99HD1RzRhTXmFi7lemqPDAHcOZ4yx95AzW6rzMvQF2QBsmSE%2fl5l8bWupChqEd28LHdjMXrSu3otYpyxc8S4cFluEgaLD2mkPCrqX61ij2PUrqiZM2jq%2bbz5Fx3kNXCZ3Z1pJkfKKQGb3T%2fvbbWfu7avjuU2kBDJjyeecJH3MGeTP9jsbT6oIHU95AL05%2bA43il%2f4rGDNcFGji1logGrKYi%2f%2b2fDpCFuGh9rN5w%3d%3d'
+        default: 'https://software.download.prss.microsoft.com/dbazure/Win11_25H2_German_Arm64.iso?t=0d00ff81-5c40-4b99-90a4-c7cd93d42aac&P1=1771239089&P2=601&P3=2&P4=O8TKJDDVXWc8b%2f1mMnCRjOO%2fCtzpE3FCJrMlccmdavWnL7XrU3xu7ugAHQpSiHiChj9ACER3K8F3fXHLIiZjGQyTHfEZ0cF8ooEHvuaxbLoJri4CBR%2bE89%2feoEdorPde9IY27mP75FZ35HK1NUxwtcU025cVU0TF6DGaMVpxngvJ%2btQkVjT0WpRkkkbi4YmtX7yHn3J74TiphU%2bhUyfxemiUMl4fxE1FfPwJaGvc%2bzbzOMvvv35ay%2bi%2bdCMG4xf1SbIjgwd%2f8IP%2fDwgHmDl1q1KJRA3tyY%2benYstCSSnH1E4NvAPwhpkl38vZIxhECV3iUB98T8GzyB%2fIAuYlOWa6w%3d%3d'
       image_index:
         description: 'Windows image index (1=Home, 4=Education, 6=Pro, 7=Pro N)'
         required: true
-        default: '1'
+        default: '6'
         type: choice
         options:
           - '1'
@@ -29,7 +29,7 @@ on:
       language:
         description: 'Language (e.g., English, Spanish, French)'
         required: false
-        default: 'English'
+        default: 'German'
       skip_cleanup:
         description: 'Skip cleanup (for debugging)'
         required: false
@@ -66,10 +66,10 @@ jobs:
           # Get edition based on index
           $index = "${{ github.event.inputs.image_index }}"
           $editions = @{
-              "1" = "Home"
-              "4" = "Education"
-              "6" = "Pro"
-              "7" = "ProN"
+              "1" = "Home_ARM64"
+              "4" = "Education_ARM64"
+              "6" = "Pro_ARM64"
+              "7" = "ProN_ARM64"
           }
           $edition = $editions[$index]
 
@@ -546,7 +546,7 @@ jobs:
             - **Workflow Run:** [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
             ### 📥 Download
-            ${{ secrets.SF_SSH_KEY != '' && format('**SourceForge:** [{0}]({1})', env.ISO_NAME, env.SF_DOWNLOAD_URL) || '**GitHub Artifacts:** Check workflow run for download' }}
+            ${{ '**GitHub Artifacts:** Check workflow run for download' }}
 
             ### 💿 Image Details
             | Property | Value |
@@ -623,7 +623,7 @@ jobs:
           - **Image Index:** ${{ github.event.inputs.image_index }}
 
           ## 📥 Download
-          ${{ secrets.SF_SSH_KEY != '' && format('🔗 **SourceForge:** [{0}]({1})', env.ISO_NAME, env.SF_DOWNLOAD_URL) || '🔗 **GitHub Artifacts:** Available in workflow run' }}
+          ${{ '🔗 **GitHub Artifacts:** Available in workflow run' }}
 
           ## 🔒 Checksums
           **SHA256:** ``````
