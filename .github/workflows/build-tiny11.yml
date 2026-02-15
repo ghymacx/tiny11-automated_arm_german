@@ -3,7 +3,7 @@
 # Description: Fully automated Windows 11 ISO processing with tiny11builder
 # Repository: https://github.com/kelexine/tiny11-automated
 
-name: Build and Release Tiny11
+name: Build and Release Tiny11_ARM64_German
 
 on:
   workflow_dispatch:
