@@ -17,15 +17,13 @@ on:
         required: true
         default: 'https://software.download.prss.microsoft.com/dbazure/Win11_25H2_German_Arm64.iso?t=0d00ff81-5c40-4b99-90a4-c7cd93d42aac&P1=1771239089&P2=601&P3=2&P4=O8TKJDDVXWc8b%2f1mMnCRjOO%2fCtzpE3FCJrMlccmdavWnL7XrU3xu7ugAHQpSiHiChj9ACER3K8F3fXHLIiZjGQyTHfEZ0cF8ooEHvuaxbLoJri4CBR%2bE89%2feoEdorPde9IY27mP75FZ35HK1NUxwtcU025cVU0TF6DGaMVpxngvJ%2btQkVjT0WpRkkkbi4YmtX7yHn3J74TiphU%2bhUyfxemiUMl4fxE1FfPwJaGvc%2bzbzOMvvv35ay%2bi%2bdCMG4xf1SbIjgwd%2f8IP%2fDwgHmDl1q1KJRA3tyY%2benYstCSSnH1E4NvAPwhpkl38vZIxhECV3iUB98T8GzyB%2fIAuYlOWa6w%3d%3d'
       image_index:
-        description: 'Windows image index (1=Home, 4=Education, 6=Pro, 7=Pro N)'
+        description: 'Windows image index (1=Home, 2=Pro)'
         required: true
-        default: '6'
+        default: '2'
         type: choice
         options:
           - '1'
-          - '4'
-          - '6'
-          - '7'
+          - '2'
       language:
         description: 'Language (e.g., English, Spanish, French)'
         required: false
@@ -67,9 +65,7 @@ jobs:
           $index = "${{ github.event.inputs.image_index }}"
           $editions = @{
               "1" = "Home"
-              "4" = "Education"
-              "6" = "Pro"
-              "7" = "ProN"
+              "2" = "Pro"
           }
           $edition = $editions[$index]
 
