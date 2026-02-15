@@ -16,10 +16,10 @@
           "timeout_seconds": 30,
           "max_results": 30,
           "architectures": [
-            "amd64"
+            "arm64"
           ],
           "languages": [
-            "en-us"
+            "de-de"
           ]
         },
         "microsoft_direct": {
@@ -44,10 +44,10 @@
       "exclude_canary": true,
       "min_build_number": 22000,
       "architectures": [
-        "amd64"
+        "arm64"
       ],
       "languages": [
-        "en-us"
+        "de-de"
       ]
     },
     "build_triggers": {
@@ -115,7 +115,7 @@
     },
     "distribution": {
       "sourceforge": {
-        "enabled": true,
+        "enabled": false,
         "auto_upload": false,
         "project_name": "tiny-11-releases",
         "api_key_secret": "SOURCEFORGE_API_KEY"
@@ -179,7 +179,6 @@
             "architecture": {
               "type": "string",
               "enum": [
-                "amd64",
                 "arm64"
               ],
               "description": "CPU architecture"
@@ -195,7 +194,7 @@
             },
             "language": {
               "type": "string",
-              "default": "en-us",
+              "default": "de-de",
               "description": "ISO language"
             },
             "checksum_sha256": {
@@ -300,9 +299,9 @@
         "title": "Windows 11 Professional 24H2 Build 26100",
         "iso_url": "https://uupdump.net/download.php?id=abc123-def456&pack=en-us&edition=professional",
         "detected_date": "2025-12-21T09:26:00Z",
-        "architecture": "amd64",
+        "architecture": "arm64",
         "channel": "retail",
-        "language": "en-us",
+        "language": "de-de",
         "checksum_sha256": null,
         "size_bytes": null,
         "builds_triggered": {
